@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Commands>
+  <Command>
+    <CommandName>GetError</CommandName>
+    <Parameters>Count</Parameters>
+  </Command>
+  <Command>
+    <CommandName>GetEmployeeData</CommandName>
+    <Parameters>Id</Parameters>
+  </Command>
+</Commands>

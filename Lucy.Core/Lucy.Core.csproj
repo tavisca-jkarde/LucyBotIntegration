@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{708ED592-7067-4853-AF11-27686B6B8EA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lucy.Core</RootNamespace>
+    <AssemblyName>Lucy.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agsXMPP">
+      <HintPath>..\packages\agsXMPP.1.1.1.0\lib\agsXMPP.dll</HintPath>
+    </Reference>
+    <Reference Include="AIMLbot">
+      <HintPath>C:\Users\jkarde\Downloads\AIMLbot.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Json">
+      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChatBot.cs" />
+    <Compile Include="ChatRoom.cs" />
+    <Compile Include="CommandAdapter.cs" />
+    <Compile Include="Contracts\ICanChat.cs" />
+    <Compile Include="Contracts\ICanRecieveMessage.cs" />
+    <Compile Include="Contracts\IChannel.cs" />
+    <Compile Include="Contracts\ICommandAdapter.cs" />
+    <Compile Include="Contracts\Message.cs" />
+    <Compile Include="CustomAttributes\AttributeToXmlDocumentConvertor.cs" />
+    <Compile Include="CustomException.cs" />
+    <Compile Include="CustomAttributes\CommandArgumentAttribute.cs" />
+    <Compile Include="CustomAttributes\CommandAttribute.cs" />
+    <Compile Include="CustomAttributes\CommandReturnsAttribute.cs" />
+    <Compile Include="CustomAttributes\MethodAttributeReader.cs" />
+    <Compile Include="Model\Command.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lucy.Infrastructure\Lucy.Infrastructure.csproj">
+      <Project>{deebacfb-99ba-44d3-a659-85343dde5c39}</Project>
+      <Name>Lucy.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AIMLbot.dll" />
+    <Content Include="bin\Debug\config\DefaultPredicates.xml" />
+    <Content Include="bin\Debug\config\GenderSubstitutions.xml" />
+    <Content Include="bin\Debug\config\Person2Substitutions.xml" />
+    <Content Include="bin\Debug\config\PersonSubstitutions.xml" />
+    <Content Include="bin\Debug\config\Settings.xml" />
+    <Content Include="bin\Debug\config\Splitters.xml" />
+    <Content Include="bin\Debug\config\Substitutions.xml" />
+    <Content Include="bin\Debug\Lucy.Core.dll" />
+    <Content Include="bin\Debug\Lucy.Core.pdb" />
+    <Content Include="bin\Debug\Lucy.Infrastructure.dll" />
+    <Content Include="bin\Debug\Lucy.Infrastructure.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\aiml\LucyKnowledgeBase.aiml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
