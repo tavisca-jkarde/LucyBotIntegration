@@ -70,7 +70,7 @@ namespace Lucy.Core
                     return;
                 if (msg.Body.StartsWith("@lucy"))
                 {
-                    if (msg.Body.Contains("take rest"))
+                    if (msg.Body.Contains("take well deserved rest"))
                     {
                         _loggedIn = false;
                         _xmppClient.Send(new agsXMPP.protocol.client.Message(msg.From, msg.Type, "Good Bye :)"));
